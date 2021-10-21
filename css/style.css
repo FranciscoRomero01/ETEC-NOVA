@@ -1,0 +1,168 @@
+* {
+  margin: 0%;
+  padding: 0%; }
+
+.cabecera {
+  width: 100%;
+  height: 80px;
+  background-color: #464646;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; }
+  .cabecera__logo {
+    margin-left: 25px; }
+    .cabecera__logo__titulo {
+      color: white;
+      font-size: 40px; }
+      .cabecera__logo__titulo .fondoAzul {
+        background-color: #0000a0; }
+  .cabecera__navegacion {
+    width: 50%; }
+    .cabecera__navegacion__lista {
+      display: flex;
+      justify-content: space-around; }
+      .cabecera__navegacion__lista .lista {
+        display: inline; }
+        .cabecera__navegacion__lista .lista__link {
+          text-decoration: none;
+          color: white;
+          font-size: 20px; }
+        .cabecera__navegacion__lista .lista__link:hover {
+          background-color: #0000a0;
+          border-radius: 50px;
+          padding: 5px 10px; }
+
+.footer__copy {
+  background-color: #0000c7;
+  text-align: center;
+  color: #e4e4e4; }
+
+.inicio {
+  height: 800px;
+  background: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url("../img/fondoInicio.jpg") no-repeat fixed;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .inicio__titulo {
+    text-align: center;
+    justify-content: center;
+    color: white;
+    font-size: 45px;
+    margin: 0 50px; }
+
+.contacto {
+  height: 350px;
+  background-color: #464646;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+  .contacto__titulo {
+    text-align: center;
+    font-size: 30px;
+    color: white; }
+  .contacto__formulario {
+    font-family: 'Righteous', cursive;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap; }
+    .contacto__formulario__nombreYApellido, .contacto__formulario__correoElectronico, .contacto__formulario__escribaComentario {
+      padding: 0.5rem;
+      font-family: 'Righteous', cursive;
+      text-align: center;
+      border-bottom: none; }
+    .contacto__formulario__nombreYApellido:focus, .contacto__formulario__correoElectronico:focus, .contacto__formulario__escribaComentario:focus {
+      width: 300px;
+      font-size: 15px;
+      transition: all 2s; }
+    .contacto__formulario__boton {
+      margin-bottom: 20px; }
+      .contacto__formulario__boton__submit, .contacto__formulario__boton__reset {
+        padding: 10px;
+        font-family: 'Righteous', cursive;
+        text-align: center;
+        background-color: black;
+        color: white;
+        border: none;
+        margin: 0 1rem;
+        cursor: pointer; }
+
+.productos {
+  height: 1180px;
+  display: flex;
+  flex-direction: column;
+  background-color: #131313; }
+  .productos__carrito {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 280px;
+    background-color: silver;
+    padding: 15px; }
+    .productos__carrito__tabla__lista {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px; }
+      .productos__carrito__tabla__lista .nombre {
+        margin-right: 175px; }
+      .productos__carrito__tabla__lista .lista {
+        display: inline;
+        color: white;
+        font-size: 20px; }
+    .productos__carrito__tabla .productoAg ul {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      border-bottom: black solid 1px; }
+      .productos__carrito__tabla .productoAg ul .nombre {
+        width: 15%; }
+      .productos__carrito__tabla .productoAg ul li {
+        display: inline; }
+    .productos__carrito__tabla__total {
+      display: flex;
+      justify-content: space-between;
+      margin-right: 380px; }
+      .productos__carrito__tabla__total .lista {
+        display: inline;
+        color: white;
+        font-size: 20px; }
+        .productos__carrito__tabla__total .lista .button {
+          border-radius: 50px;
+          text-decoration: none;
+          background-color: white;
+          color: black; }
+    .productos__carrito a {
+      padding: 5px;
+      background-color: #00004e;
+      color: white;
+      text-align: center; }
+  .productos__listaProductos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 15px; }
+    .productos__listaProductos #product {
+      border: #fffefe 2px solid;
+      margin: 10px; }
+      .productos__listaProductos #product .imagen-producto {
+        height: 300px;
+        width: 300px; }
+      .productos__listaProductos #product .detalle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        color: white;
+        font-size: 20px;
+        width: 300px;
+        text-align: center; }
+      .productos__listaProductos #product .agregar-carrito {
+        text-decoration: none;
+        color: #010c47;
+        background-color: silver;
+        font-weight: bold; }

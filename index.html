@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Inicio</title>
+</head>
+<body>
+    <header class="cabecera">
+        <div class="cabecera__logo">
+            <h1 class="cabecera__logo__titulo">
+                <strong class="fondoAzul">E-TEC</strong> NOVA
+            </h1>
+        </div>
+        <nav class="cabecera__navegacion">
+            <ul class="cabecera__navegacion__lista">
+                <li class="lista">
+                    <a class="lista__link" href="#inicio">Inicio</a>
+                </li>
+                <li class="lista">
+                    <a class="lista__link" href="#productos">Productos</a>
+                </li>
+                <li class="lista">
+                    <a class="lista__link" href="#contacto">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="inicio" class="inicio">
+            <h2 class="inicio__titulo">
+                La PC que siempre quisiste la encontras en E-TEC NOVA!
+            </h2>
+        </section>
+        <section id="productos" class="productos">
+            <div id="listaProducto" class="productos__listaProductos"></div>
+            <div id="carrito" class="productos__carrito">
+                <table id="lista-carrito" class="productos__carrito__tabla">
+                    <ul class="productos__carrito__tabla__lista">
+                        <li class="lista nombre">Nombre</li>
+                        <li class="lista">Precio</li>
+                        <li class="lista">Cantidad</li>
+                    </ul>
+                    <tbody class="productoAg">
+                    </tbody>
+                </table>
+                <ul class="productos__carrito__tabla__total">
+                    <li class="lista">Total</li>
+                    <li id="totalCompra" class="lista"></li>
+                    <li class="lista"><a href="#" id="vaciar-carrito" class="button">Vaciar Carrito</a></li>
+                </ul>
+            </div>
+        </section>
+        <section id="contacto" class="contacto">
+            <h2 class="contacto__titulo">Nos intesera saber de usted, asi como sus ideas y sugerencias sobre nuestro sitio, contenidos que quisieras ver. ¡Recorda que tu opinion es de gran interes!</h2>
+            <form class="contacto__formulario">
+                <input class="contacto__formulario__nombreYApellido" type="text" name="Nombre y Apellido" placeholder="Nombre y Apellido">
+                <input class="contacto__formulario__correoElectronico" type="email" name="Email" placeholder="Correo electronico">
+                <div class="contacto__formulario__mail">
+                  <label class="contacto__formulario__mail__label" for="acepta informacion">¿Desea recibir las ultimas novedades en su Mail?</label>
+                  <input class="contacto__formulario__mail__input" type="checkbox" name="acepta informacion">
+                </div>
+                <textarea class="contacto__formulario__escribaComentario" id="" cols="30" rows="10" placeholder="Escriba su comentario..."></textarea>
+                <div class="contacto__formulario__boton">
+                  <input class="contacto__formulario__boton__submit" type="submit" value="Enviar formulario"> 
+                  <input class="contacto__formulario__boton__reset" type="reset" value="Limpiar datos">
+                </div>
+           </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__copy"> &copy; Todos los derechos reservados | E-TECNOVA</p>
+    </footer>
+    <script src="./js/producto.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>
