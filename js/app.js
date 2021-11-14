@@ -11,7 +11,6 @@ $("#vaciar-carrito").click(vaciarCarrito);
 
 let productos;
 let mensaje = [];
-let total = Number(0);
 
 document.addEventListener('DOMContentLoaded', () => {
     carrito = JSON.parse(localStorage.getItem('carrito')) || [];
@@ -107,7 +106,6 @@ function actualizarCarritoHTML(){
         const column = document.createElement('ul');
 
         const {imagen, nombre, precio, cantidad, id,} = producto
-        total = total + precio;
 
         column.innerHTML = `
             <li>
@@ -123,7 +121,7 @@ function actualizarCarritoHTML(){
                 ${cantidad}
             </li>
             <li>
-                ${total}
+                ${precio}
             </li>
         `
 
