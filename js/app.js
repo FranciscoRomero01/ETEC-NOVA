@@ -1,30 +1,54 @@
-//Selectores
+// Selectores
 const listaProductos = document.querySelector("#listaProducto");
 const tableCarrito = document.querySelector('#lista-carrito tbody');
-const btnVaciarCarrito = document.querySelector('#vaciar-carrito');
 
 // Oyentes
+
+$("#listaProducto").click(agregarProducto);
+$("#vaciar-carrito").click(vaciarCarrito);
+
+// Productos
+
+let productos;
+let mensaje = [];
+let total = Number(0);
 
 document.addEventListener('DOMContentLoaded', () => {
     carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     
     actualizarCarritoHTML();
     
-    compraProductos(productos);
+    $.ajax({
+		url: 'js/productos.json',
+		success: function (productosJSON, textStatus, xhr) {
+			productos = productosJSON;
+			compraProductos(productos);
+		},
+		error: function (xhr, textStatus, error) {
+			console.log(xhr);
+			console.log(textStatus);
+			console.log(error);
+		}
+	});
 })
 
-listaProductos.addEventListener('click', agregarProducto);
-btnVaciarCarrito.addEventListener('click', vaciarCarrito);
+function compraProductos() {
+    listaProductos.innerHTML = ''
 
-function vaciarCarrito (e){
-    e.preventDefault();
+    productos.forEach(productos => {
+        const html = `
+			<div id="product">
+                    <a href="#" id="agregarCarrito" data-id="${productos.id}"><img src="${productos.imagen}" class="imagen-producto"><button class="agregar-carrito">Agregar al carrito</button></a>
+                    <div class="detalle">
+                        <h4>${productos.nombre}</h4>
+                        <p class="precio">${productos.precio}</p>
+                    </div>
+			</div>
+        `
+        listaProductos.innerHTML += html
+    });
 
-    // Vaciar carrito
-    carrito = [];
-
-    // Actualizaciones
-    actualizarCarritoHTML();
-    actualizarStorage();
+    console.log(productos);
 }
 
 function agregarProducto(e) {
@@ -34,6 +58,7 @@ function agregarProducto(e) {
         const productCard = e.target.parentElement.parentElement;
         
         const productoAgregado = {
+            imagen: productCard.querySelector('img.imagen-producto').src,
             nombre: productCard.querySelector('h4').textContent,
             precio: productCard.querySelector('p').textContent,
             cantidad: 1,
@@ -54,10 +79,25 @@ function agregarProducto(e) {
             carrito.push(productoAgregado); 
         }
 
+        //Animacion de Carrito 
+        /*$("#carrito").animate({height: "+=100px"});*/
 
         //Actualizo la tabla de carrito
         actualizarCarritoHTML();
     }
+}
+
+//Carrito
+
+function vaciarCarrito (e){
+    e.preventDefault();
+
+    // Vaciar carrito
+    carrito = [];
+
+    // Actualizaciones
+    actualizarCarritoHTML();
+    actualizarStorage();
 }
 
 function actualizarCarritoHTML(){
@@ -66,16 +106,24 @@ function actualizarCarritoHTML(){
     carrito.forEach(producto => {
         const column = document.createElement('ul');
 
-        const {nombre, precio, cantidad, id } = producto
+        const {imagen, nombre, precio, cantidad, id,} = producto
+        total = total + precio;
+
         column.innerHTML = `
+            <li>
+                <img src="${imagen}">
+            </li>
             <li class="nombre">
                 ${nombre}
             </li>
-            <li>
+            <li class="margin">
                 ${precio}
             </li>
             <li>
                 ${cantidad}
+            </li>
+            <li>
+                ${total}
             </li>
         `
 
@@ -87,22 +135,21 @@ function actualizarStorage () {
     localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
-function compraProductos(productos) {
-    listaProductos.innerHTML = ''
+$('#abrirCarrito').click(abrirCarrito);
+$('#cerrarCarrito').click(cerrarCarrito);
 
-    productos.forEach(producto => {
-        const html = `
-			<div id="product">
-                    <img src="${producto.imagen}" class="imagen-producto">
-                    <div class="detalle">
-                        <h4>${producto.nombre}</h4>
-                        <p class="precio">${producto.precio}</p>
-                        <a href="#" class="agregar-carrito" data-id="${producto.id}">Agregar al carrito</a>
-                    </div>
-			</div>
-        `
-        listaProductos.innerHTML += html
-    });
-
-    console.log(productos)
+function abrirCarrito(){
+    document.querySelector("#carrito").style.height="50%";
 }
+
+function cerrarCarrito(e){
+    e.preventDefault();
+    
+    document.querySelector("#carrito").style.height="0%";
+}
+
+// Animaciones
+
+$('#titulo').delay(500)
+            .slideDown(1000);
+

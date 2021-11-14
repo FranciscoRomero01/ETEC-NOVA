@@ -1,0 +1,32 @@
+[
+    {
+        "imagen": "img/Samsung/A72.jfif",
+        "nombre": "CELULAR SAMSUNG A72",
+		"precio": "$75.000",
+        "id": 1
+    },
+    {
+        "imagen": "img/Samsung/A52.jfif",
+        "nombre": "CELULAR SAMSUNG A52",
+		"precio": "$70.00",
+        "id": 2
+    },
+    {
+        "imagen": "img/Samsung/A22.jfif",
+        "nombre": "CELULAR SAMSUNG A22",
+		"precio": "$40.000",
+        "id": 3
+    },
+    {
+        "imagen": "img/Samsung/A12.jfif",
+        "nombre": "CELULAR SAMSUNG A12",
+		"precio": "$30.500",
+        "id": 4
+    },
+    {
+        "imagen": "img/Samsung/S20.jfif",
+        "nombre": "CELULAR SAMGUNG S20",
+		"precio": "$76.500",
+        "id": 5
+    }
+]
