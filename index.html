@@ -26,6 +26,9 @@
                 <li class="lista">
                     <a class="lista__link" href="#contacto">Contacto</a>
                 </li>
+                <li class="lista">
+                    <a class="lista__link" href="registrarse.html">Inicio section</a>
+                </li>
                 <li class="lista carrito">
                     <a href="#">
                         <img src="https://img.icons8.com/ios/25/ffffff/shopping-cart.png" id="abrirCarrito">
@@ -43,11 +46,12 @@
                             <tbody class="productoAg">
                             </tbody>
                         </table>
-                        <ul id="totalCarrito">
-                            <li class="lista"><a href="#" id="vaciar-carrito" class="button">Vaciar Carrito</a></li>
-                            <li class="lista">Total</li>
-                            <li id="totalCompra" class="lista"></li>
-                        </ul>
+                        <div id="pieCarrito">
+                            <a href="#" id="vaciar-carrito" class="button">Vaciar Carrito</a>
+                            <div id="totalCarrito">
+                            </div>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -59,6 +63,12 @@
             </h2>
         </section>
         <section id="productos" class="productos">
+            <div id="mapaProductos" class="productos__mapaProductos">
+                <form id="formulario">
+                    <input type="text" name="" id="buscador" placeholder="Ingrese producto">
+                    <input type="submit" name="" id="botonBuscador"  value="Bucar producto">
+                </form>
+            </div>
             <div id="listaProducto" class="productos__listaProductos"></div>
         </section>
         <section id="contacto" class="contacto">

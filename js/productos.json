@@ -1,32 +1,62 @@
 [
     {
         "imagen": "img/Samsung/A72.jfif",
-        "nombre": "CELULAR SAMSUNG A72",
-		"precio": "$75.000",
+        "nombre": "Samsung A72",
+		"precio": "75.000",
         "id": 1
     },
     {
         "imagen": "img/Samsung/A52.jfif",
-        "nombre": "CELULAR SAMSUNG A52",
-		"precio": "$70.00",
+        "nombre": "Samsung A52",
+		"precio": "70.000",
         "id": 2
     },
     {
         "imagen": "img/Samsung/A22.jfif",
-        "nombre": "CELULAR SAMSUNG A22",
-		"precio": "$40.000",
+        "nombre": "Samsung A22",
+		"precio": "40.000",
         "id": 3
     },
     {
         "imagen": "img/Samsung/A12.jfif",
-        "nombre": "CELULAR SAMSUNG A12",
-		"precio": "$30.500",
+        "nombre": "Samsung A12",
+		"precio": "30.500",
         "id": 4
     },
     {
         "imagen": "img/Samsung/S20.jfif",
-        "nombre": "CELULAR SAMGUNG S20",
-		"precio": "$76.500",
+        "nombre": "Samsung S20",
+		"precio": "76.500",
         "id": 5
+    },
+    {
+        "imagen": "img/motorola/g100.png",
+        "nombre": "Motorola G100",
+        "precio": "88.000",
+        "id": 6
+    },
+    {
+        "imagen": "img/motorola/g60s.png",
+        "nombre": "Motorola G60S",
+        "precio": "50.000",
+        "id": 7
+    },
+    {
+        "imagen": "img/Motorola/g20.png",
+        "nombre": "Motorola G20",
+        "precio": "30.000",
+        "id": 8
+    },
+    {
+        "imagen": "img/motorola/e40.png",
+        "nombre":"Motorola E40",
+        "precio": "25.000",
+        "id": 9
+    },
+    {
+        "imagen": "img/motorola/e20.png",
+        "nombre": "Motorola E20",
+        "precio": "22.000",
+        "id": 10
     }
 ]

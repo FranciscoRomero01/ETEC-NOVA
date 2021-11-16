@@ -1,16 +1,18 @@
 // Selectores
 const listaProductos = document.querySelector("#listaProducto");
 const tableCarrito = document.querySelector('#lista-carrito tbody');
+const formBuscador = document.querySelector('#formulario');
 
 // Oyentes
 
 $("#listaProducto").click(agregarProducto);
-$("#vaciar-carrito").click(vaciarCarrito);
+formBuscador.addEventListener('submit', buscarProductos);
 
 // Productos
 
 let productos;
-let mensaje = [];
+let carrito = [];
+
 
 document.addEventListener('DOMContentLoaded', () => {
     carrito = JSON.parse(localStorage.getItem('carrito')) || [];
@@ -31,16 +33,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 })
 
-function compraProductos() {
+function compraProductos(listadoProductos) {
     listaProductos.innerHTML = ''
 
-    productos.forEach(productos => {
+    listadoProductos.forEach(productos => {
         const html = `
 			<div id="product">
                     <a href="#" id="agregarCarrito" data-id="${productos.id}"><img src="${productos.imagen}" class="imagen-producto"><button class="agregar-carrito">Agregar al carrito</button></a>
                     <div class="detalle">
                         <h4>${productos.nombre}</h4>
-                        <p class="precio">${productos.precio}</p>
+                        <div>
+                            <span class="precio">$</span><p class="precio">${productos.precio}</p>
+                        </div>
                     </div>
 			</div>
         `
@@ -48,6 +52,7 @@ function compraProductos() {
     });
 
     console.log(productos);
+    totalCarrito();
 }
 
 function agregarProducto(e) {
@@ -78,15 +83,30 @@ function agregarProducto(e) {
             carrito.push(productoAgregado); 
         }
 
-        //Animacion de Carrito 
-        /*$("#carrito").animate({height: "+=100px"});*/
-
-        //Actualizo la tabla de carrito
+        //Actualizaciones
+        totalCarrito();
         actualizarCarritoHTML();
+        actualizarStorage();
     }
 }
 
+function buscarProductos(e) {
+	e.preventDefault();
+
+	// Leer el texto del input
+	const inputBuscador = document.querySelector('#buscador').value;
+    const inputFiltrado = inputBuscador.toLowerCase().trim();
+	
+    const resultado = productos.filter( productos => productos.nombre.toLowerCase().includes(inputFiltrado));
+
+	console.log(resultado);
+    compraProductos(resultado);
+	formBuscador.reset();
+}
+
 //Carrito
+
+$("#vaciar-carrito").click(vaciarCarrito);
 
 function vaciarCarrito (e){
     e.preventDefault();
@@ -95,6 +115,7 @@ function vaciarCarrito (e){
     carrito = [];
 
     // Actualizaciones
+    totalCarrito();
     actualizarCarritoHTML();
     actualizarStorage();
 }
@@ -105,7 +126,8 @@ function actualizarCarritoHTML(){
     carrito.forEach(producto => {
         const column = document.createElement('ul');
 
-        const {imagen, nombre, precio, cantidad, id,} = producto
+        const {imagen, nombre, precio, cantidad, id} = producto
+        const total = Number(precio) * Number(cantidad) * 1000;
 
         column.innerHTML = `
             <li>
@@ -115,16 +137,15 @@ function actualizarCarritoHTML(){
                 ${nombre}
             </li>
             <li class="margin">
-                ${precio}
+                $${precio}
             </li>
             <li>
                 ${cantidad}
             </li>
             <li>
-                ${precio}
+                $${total}
             </li>
         `
-
         tableCarrito.append(column);
     })
 }
@@ -145,6 +166,32 @@ function cerrarCarrito(e){
     
     document.querySelector("#carrito").style.height="0%";
 }
+
+// Calculando total del carrito
+
+const total = document.querySelector('#totalCarrito');
+
+function totalCarrito(){
+    let tPrecio = 0;
+    total.innerHTML = ''
+
+
+    carrito.forEach((e) => {
+      tPrecio =
+        tPrecio + Number(e.cantidad) * Number(e.precio) * 1000;
+    });
+  
+    const totalCompra = document.createElement('ul')
+
+    totalCompra.innerHTML = `
+        <li class="lista">Total</li>
+        <li id="totalCompra" class="lista"> $${tPrecio}</li>
+    `
+    total.append(totalCompra)
+
+    console.log("Total del Carrito es: ", tPrecio);
+    return tPrecio;
+};
 
 // Animaciones
 
