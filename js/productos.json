@@ -58,5 +58,35 @@
         "nombre": "Motorola E20",
         "precio": "22.000",
         "id": 10
+    },
+    {
+        "imagen": "img/LG/k62.jpg",
+        "nombre": "LG K62",
+        "precio": "35.000",
+        "id": 11
+    },
+    {
+        "imagen": "img/LG/k61.jpg",
+        "nombre": "LG K61",
+        "precio": "32.000",
+        "id": 12
+    },
+    {
+        "imagen": "img/LG/k52.jfif",
+        "nombre":"LG K52",
+        "precio": "28.000",
+        "id": 13
+    },
+    {
+        "imagen": "img/LG/k42.jpg",
+        "nombre":"LG K42",
+        "precio": "25.000",
+        "id": 14
+    },
+    {
+        "imagen": "img/LG/Velvet.jpg",
+        "nombre":"LG Velvet",
+        "precio": "75.000",
+        "id": 15
     }
 ]

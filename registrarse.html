@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <title> Registrarse </title>
+</head>
+<body>
+    <header class="cabecera">
+        <div class="cabecera__logo">
+            <h1 class="cabecera__logo__titulo">
+                <strong class="fondoAzul">E-TEC</strong> NOVA
+            </h1>
+        </div>
+        <nav class="cabecera__navegacion">
+            <ul class="cabecera__navegacion__lista">
+                <li class="lista">
+                    <a class="lista__link" href="index.html">Inicio</a>
+                </li>
+                <li class="lista">
+                    <a class="lista__link" href="index.html#productos">Productos</a>
+                </li>
+                <li class="lista">
+                    <a class="lista__link" href="index.html#contacto">Contacto</a>
+                </li>
+                <li class="lista">
+                    <a href="registrarse.html">
+                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/user-male--v1.png"/>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main id="registrado">
+        <form id="registrarse">
+            <h1 class="titulo">Ingrese sus datos</h1>
+            <input type="text" name="Nombre y Apellido" class="nombre" placeholder="Nombre">
+            <input type="email" name="Email" class="correo" placeholder="Correo">
+            <div class="sexo">
+                <label for="Sexo" class="sexo"></label>
+                <input type="radio" name="Sexo"> Hombre
+                <input type="radio" name="Sexo"> Mujer
+            </div>
+            <input type="password" class="contraseña" placeholder="Genere su contraseña">
+            <div>
+                <input class="enviar" type="submit" value="Enviar formulario"> 
+                <input class="resetear" type="reset" value="Limpiar datos">
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p class="footer__copy"> &copy; Todos los derechos reservados | E-TECNOVA</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/inicioSesion.js"></script>
+</body>
+</html>

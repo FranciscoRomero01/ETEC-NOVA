@@ -1,0 +1,205 @@
+.productos{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(19, 19, 19);
+
+    &__mapaProductos{
+        background: white;
+        padding: 15px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &__formulario{
+            width: 250px;
+            margin-top: 25px;
+
+            #buscador{
+                height: 30px;
+                width: 100%;
+                font-size: 15px;
+                text-align: center;
+                border: none;
+                border-bottom: 4px solid rgb(0, 22, 94);
+                margin-bottom: 10px;
+            }
+
+            #botonBuscador{
+                background-color: silver;
+                padding: 5px;
+                border: none;
+                cursor: pointer;
+            }
+        }
+
+        &__filtros{
+            margin: 50px 0px 0px 50px;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            width: 75%;
+            justify-content: space-between;
+
+            .marca{
+
+                div{
+                    font-size: 25px;
+                    font-weight: bold;
+                    font-family: 'Poppins', sans-serif;
+                }
+
+                ul{
+                    display: flex;
+                    flex-direction: row;
+
+                    li{
+                        display: flex;
+                        background: rgb(0, 22, 94);
+                        cursor: pointer;
+                        margin: 15px;
+                        padding: 5px;
+                        font-family: cursive;
+
+                        a{
+                            color: silver;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+
+            .precio{
+                
+                &__parrafo{
+                    font-size: 25px;
+                    font-weight: bold;
+                }
+
+
+                &__formulario{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+
+                    #precioMinimo, #precioMaximo {
+                        width: 125px;
+                        height: 30px;
+                        text-align: center;
+                        border: none;
+                        border-bottom: 4px solid rgb(0, 22, 94);                        
+                    }
+
+                    #buscadorPrecio{
+                        margin-top: 10px;
+                        background-color: silver;
+                        padding: 5px;
+                        border: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            #ordenar{
+                .flex{
+                    display: flex;
+                    flex-direction: row;
+                    font-size: 20px;
+                    margin-top: 25px;
+
+                    ul{
+                        margin-left: 10px;
+
+                        li{
+                            display: flex;
+                            flex-direction: column;
+                            width: 150px;
+                            
+                            a{
+                                text-decoration: none;
+                                color: rgb(0, 18, 182);
+                                font-weight: bold;
+                            }
+                        }
+                    }
+
+                    img{
+                        margin-left: 5px;
+                        cursor: pointer;
+                        border: solid 2px silver;
+                    }
+                }
+            }
+        }
+    }
+
+    &__listaProductos{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 15px;
+
+        #product{
+            border: rgb(255, 254, 254) 2px solid;
+            margin: 20px;
+            
+            .detalle{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                color: rgb(255, 255, 255);
+                font-size: 20px;
+                width: 300px;
+                text-align: center;
+
+                div{
+                    display: flex;
+                    justify-content: center;
+
+                    .precio{
+                        color: rgb(0, 26, 255);
+                    }
+                }
+            }
+
+            #agregarCarrito{
+                text-decoration: none;
+                color: black;
+                background-color: silver;
+                font-weight: bold;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                cursor: default;
+
+                .imagen-producto{
+                    height: 300px;
+                    width: 300px;
+                    position: relative;
+                    background: white;
+                }
+
+                .agregar-carrito{
+                    position: absolute;
+                    display: none;
+                    background-color: black;
+                    padding: 5px;
+                    color: silver;
+                    border: none;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                }
+            }
+
+            #agregarCarrito:hover{
+
+                .agregar-carrito{
+                    display: inline;
+                    transition: all 5s;
+                    animation: bounce;
+                    animation-duration: 2s;
+                }
+            }
+        }
+    }
+}
