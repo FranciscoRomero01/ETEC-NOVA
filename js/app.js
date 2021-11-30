@@ -2,6 +2,7 @@
 const listaProductos = document.querySelector("#listaProducto");
 const tableCarrito = document.querySelector('#lista-carrito tbody');
 const formBuscador = document.querySelector('#formulario');
+const formPrecio = document.querySelector('#formularioPrecio');
 
 // Oyentes
 
@@ -14,6 +15,7 @@ $("#mostrarMenorMayor").click(mostrarMenorMayor);
 $("#mostrarMayorMenor").click(mostrarMayorMenor);
 $("#mostrarPorMarca").click(mostrarPorMarca);
 formBuscador.addEventListener('submit', buscarProductos);
+formPrecio.addEventListener('submit', precio);
 
 // Productos
 
@@ -200,6 +202,27 @@ function mostrarPorMarca(e) {
     });
 
     compraProductos(productos);
+}
+
+function precio(e){
+    e.preventDefault();
+
+    // Para el precio minimo
+    const inputMinimo = document.querySelector('#precioMinimo').value;
+    let numeroMinimo = Number(inputMinimo);
+
+    // Para el precio maximo
+    const inputMaximo = document.querySelector('#precioMaximo').value;
+    let numeroMaximo = Number(inputMaximo);
+    if (numeroMaximo === 0){
+        numeroMaximo = 100000;
+    }
+
+    // Buscar productos segun el numero
+    const productosPrecio = productos.filter(productos => productos.precio > numeroMinimo && productos.precio < numeroMaximo);
+    
+    
+    compraProductos(productosPrecio);
 }
 
 // Carrito

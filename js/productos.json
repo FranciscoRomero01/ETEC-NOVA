@@ -1,30 +1,30 @@
 [
     {
-        "imagen": "img/Samsung/A72.jfif",
+        "imagen": "img/samsung/A72.jfif",
         "nombre": "Samsung A72",
 		"precio": "75.000",
         "id": 1
     },
     {
-        "imagen": "img/Samsung/A52.jfif",
+        "imagen": "img/samsung/A52.jfif",
         "nombre": "Samsung A52",
 		"precio": "70.000",
         "id": 2
     },
     {
-        "imagen": "img/Samsung/A22.jfif",
+        "imagen": "img/samsung/A22.jfif",
         "nombre": "Samsung A22",
 		"precio": "40.000",
         "id": 3
     },
     {
-        "imagen": "img/Samsung/A12.jfif",
+        "imagen": "img/samsung/A12.jfif",
         "nombre": "Samsung A12",
 		"precio": "30.500",
         "id": 4
     },
     {
-        "imagen": "img/Samsung/S20.jfif",
+        "imagen": "img/samsung/S20.jfif",
         "nombre": "Samsung S20",
 		"precio": "76.500",
         "id": 5
@@ -42,7 +42,7 @@
         "id": 7
     },
     {
-        "imagen": "img/Motorola/g20.png",
+        "imagen": "img/motorola/g20.png",
         "nombre": "Motorola G20",
         "precio": "30.000",
         "id": 8
@@ -60,31 +60,31 @@
         "id": 10
     },
     {
-        "imagen": "img/LG/k62.jpg",
+        "imagen": "img/lg/k62.jpg",
         "nombre": "LG K62",
         "precio": "35.000",
         "id": 11
     },
     {
-        "imagen": "img/LG/k61.jpg",
+        "imagen": "img/lg/k61.jpg",
         "nombre": "LG K61",
         "precio": "32.000",
         "id": 12
     },
     {
-        "imagen": "img/LG/k52.jfif",
+        "imagen": "img/lg/k52.jfif",
         "nombre":"LG K52",
         "precio": "28.000",
         "id": 13
     },
     {
-        "imagen": "img/LG/k42.jpg",
+        "imagen": "img/lg/k42.jpg",
         "nombre":"LG K42",
         "precio": "25.000",
         "id": 14
     },
     {
-        "imagen": "img/LG/Velvet.jpg",
+        "imagen": "img/lg/Velvet.jpg",
         "nombre":"LG Velvet",
         "precio": "75.000",
         "id": 15
